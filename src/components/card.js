@@ -66,10 +66,35 @@ const cardAppender = (selector) => {
   //res.data.articles.technology[0-2]
   //res.data.articles.jquery[0-2]
   //res.data.articles.node[0-1]
+  //each 'article' object will have to have an index / length property to programatically display the needful data
+  //for each 'index', return the Card func
+  //for (let i...){
+  //    const topic = Card(res.data.articles.topic[i])
+    //  document.querySelector(selector).appendChild(topic)
+  //}
 
   axios.get(`http://localhost:5000/api/articles`)
   .then(res=>{
-    console.log(res);
+    for (let i=0; i<res.data.articles.javascript.length; i++){
+      const javascript = Card(res.data.articles.javascript[i]);
+      document.querySelector(selector).appendChild(javascript);
+    }
+    for (let i=0; i<res.data.articles.bootstrap.length; i++){
+      const bootstrap = Card(res.data.articles.bootstrap[i]);
+      document.querySelector(selector).appendChild(bootstrap);
+    }
+    for (let i=0; i<res.data.articles.technology.length; i++){
+      const technology = Card(res.data.articles.technology[i]);
+      document.querySelector(selector).appendChild(technology);
+    }
+    for (let i=0; i<res.data.articles.jquery.length; i++){
+      const jquery = Card(res.data.articles.jquery[i]);
+      document.querySelector(selector).appendChild(jquery);
+    }
+    for (let i=0; i<res.data.articles.node.length; i++){
+      const node = Card(res.data.articles.node[i]);
+      document.querySelector(selector).appendChild(node);
+    }
   }).catch(err=>{
     console.error(err);
   })
