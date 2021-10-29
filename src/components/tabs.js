@@ -1,4 +1,6 @@
-const Tabs = (topics) => {
+import axios from 'axios';
+
+const Tabs = (arr) => {
   // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
@@ -17,10 +19,10 @@ const Tabs = (topics) => {
   const topicsClass = document.createElement('div');
   topicsClass.classList.add('topics');
 
-  for (let i=0; i<topics.length; i++){
+  for (let i=0; i<arr.length; i++){
     const tab = document.createElement('div');
     tab.classList.add('tab');
-    tab.textContent = topics[i];
+    tab.textContent = arr[i];
 
     topicsClass.appendChild(tab);
   }
@@ -37,6 +39,16 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+
+  axios.get(`http://localhost:5000/api/topics`)
+    .then(res=>{
+      // console.log(res);
+      const tabsNew = Tabs(res.data.topics); //NOTE TO FUTURE CLAIRE: YOU ARE LOOKING AT THIS BECAUSE YOU FORGOT JSON OBJS HAVE THEIR STUFF IN res.data.whatever NOT JUST res.whatever!
+      document.querySelector(selector).appendChild(tabsNew);
+    }).catch(err=>{
+      console.error(err);
+    })
+
 }
 
 export { Tabs, tabsAppender }
