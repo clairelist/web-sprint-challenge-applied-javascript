@@ -12,8 +12,8 @@ You are not allowed to collaborate during the sprint challenge.
 
 - [X] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
 - [X] Open the assignment in Canvas and click on the "Set up git" option.
-- [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
-- [ ] Check to see that Codegrade has accepted your git submission.
+- [X] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
+- [X] Check to see that Codegrade has accepted your git submission.
 
 ## Project Instructions
 
@@ -27,11 +27,11 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ### Instructions
 
-- [ ] Navigate to the root of the project with your command line.
-- [ ] Run `npm install` to download the dependencies listed in the `package.json` file.
-- [ ] Run `npm start` to compile the project and serve it.
-- [ ] Navigate Chrome to `http://localhost:3000`
-- [ ] In a separate terminal, run `npm test` to run tests.
+- [X] Navigate to the root of the project with your command line.
+- [X] Run `npm install` to download the dependencies listed in the `package.json` file.
+- [X] Run `npm start` to compile the project and serve it.
+- [X] Navigate FIREFOX to `http://localhost:3000`
+- [X] In a separate terminal, run `npm test` to run tests.
 
 **Steps Required for MVP:**
 
@@ -50,17 +50,26 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes to the *main* branch.
-- [ ] Check Codegrade for automated feedback.
-- [ ] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
-- [ ] Any changes pushed after the deadline will not receive any feedback.
+- [X] Submit via Codegrade by committing and pushing any new changes to the *main* branch.
+- [X] Check Codegrade for automated feedback.
+- [X] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
+- [X] Any changes pushed after the deadline will not receive any feedback.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+    DOM is the document object model; it represents the webpage and allows developers to make changes programmatically to it.
+
 2. What is an event?
+    Any time a user interacts with the page; by clicking, typing in a form, etc.
+
 3. What is an event listener?
+    A method by which developers can capture user events and execute certain code.
+
 4. Why would we convert a NodeList into an Array?
+    So that we can manipulate it like an array. Gives more functionality to the developer.
+
 5. What is a component?
+    A component is a small piece of the site that fufills a certain functionality.
