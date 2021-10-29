@@ -1,4 +1,4 @@
-const Card = (article) => {
+const Card = ({headline,authorPhoto,authorName}) => {
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,6 +17,37 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+  //create elements
+  //insert text content
+  //append to top level class
+
+  const cardClass = document.createElement('div');
+  cardClass.classList.add('card');
+
+  const headLn = document.createElement('div')
+  headLn.classList.add('headline');
+  headLn.textContent = headline;
+  cardClass.appendChild(headLn);
+
+  //author class will be appended TO cardClass, but HAVE img-container & authorname span appended TO itself!
+  const authorClass = document.createElement('div');
+  authorClass.classList.add('author');
+  cardClass.appendChild(authorClass);
+
+  const imgCont = document.createElement('div');
+  imgCont.classList.add('img-container');
+  authorClass.appendChild(imgCont);
+
+  const imgAct = document.createElement('img'); //'image actual' ie
+  imgAct.setAttribute('src',authorPhoto);
+  imgCont.appendChild(imgAct);
+
+  const anSpan = document.createElement('span');
+  authorClass.appendChild(anSpan);
+  anSpan.textContent = `By: ${authorName}`;
+
+  return cardClass;
 }
 
 const cardAppender = (selector) => {
